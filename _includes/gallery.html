@@ -1,0 +1,13 @@
+<div class="row row-cols-2 row-cols-md-3 g-3">
+  {% for file in site.static_files %}
+    {% if file.path contains include.folder and file.path contains '/full/' %}
+      {% if file.extname == '.jpg' or file.extname == '.jpeg' %}
+        <div class="col">
+          <img src="{{ file.path | relative_url }}"
+               alt="{{ file.name }}"
+               style="aspect-ratio: 1/1; object-fit: cover; width: 100%; display: block;">
+        </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
