@@ -1,0 +1,255 @@
+---
+---
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* =============================================================
+   Blueprint (dark) and Paper (light) themes
+   Palette derived from the spinflip brand SVGs.
+
+   Blueprint — dark mode:
+     background  #0a2540  deep navy
+     secondary   #9ec5e8  steel blue
+     accent      #ffb84d  amber
+
+   Paper — light mode:
+     background  #f3efe6  warm cream
+     secondary   #5b5b5b  charcoal
+     accent      #c43d1f  terracotta
+   ============================================================= */
+
+@mixin blueprint {
+  /* background */
+  --main-bg: #0a2540;
+  --mask-bg: #163a5f;
+  --main-border-color: #163a5f;
+
+  /* text */
+  --text-color: #9ec5e8;
+  --text-muted-color: #6a9cbf;
+  --text-muted-highlight-color: #8ab8d8;
+  --heading-color: #e0eeff;
+  --label-color: #7ab0d0;
+  --blockquote-border-color: #1e4a7a;
+  --blockquote-text-color: #6a9cbf;
+
+  /* links and buttons */
+  --link-color: #ffb84d;
+  --link-underline-color: #7a5420;
+  --button-bg: #0d2d4a;
+  --btn-border-color: #1e4a7a;
+  --btn-backtotop-color: #9ec5e8;
+  --btn-backtotop-border-color: #163a5f;
+
+  /* cards */
+  --card-header-bg: #0d2d4a;
+  --card-bg: #0d2d4a;
+  --card-hover-bg: #163a5f;
+  --card-shadow: rgba(5, 15, 30, 0.7) 0 6px 18px 0,
+    rgba(100, 150, 200, 0.15) 0 0 0 1px;
+
+  /* forms and images */
+  --checkbox-color: #4a7aa0;
+  --checkbox-checked-color: #ffb84d;
+  --img-bg: radial-gradient(circle, #0d2d4a 0%, #071c30 100%);
+  --shimmer-bg: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(158, 197, 232, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  /* sidebar */
+  --site-title-color: #9ec5e8;
+  --site-subtitle-color: #6a9cbf;
+  --sidebar-bg: #071c30;
+  --sidebar-border-color: #163a5f;
+  --sidebar-muted-color: #6a9cbf;
+  --sidebar-active-color: #ffffff;
+  --sidebar-hover-bg: #0d2d4a;
+  --sidebar-btn-bg: #0d2d4a;
+  --sidebar-btn-color: #6a9cbf;
+  --avatar-border-color: rgba(158, 197, 232, 0.5);
+
+  /* topbar */
+  --topbar-bg: rgba(10, 37, 64, 0.85);
+  --topbar-text-color: #9ec5e8;
+  --search-border-color: #1e4a7a;
+  --search-icon-color: #4a7aa0;
+  --input-focus-border-color: #6a9cbf;
+
+  /* posts */
+  --post-list-text-color: #9ec5e8;
+  --btn-patinator-text-color: #9ec5e8;
+  --btn-paginator-hover-color: #0d2d4a;
+  --toc-highlight: #ffb84d;
+  --toc-popup-border-color: #1e4a7a;
+  --tag-hover: #163a5f;
+  --tb-odd-bg: #0d2d4a;
+  --tb-even-bg: #0a2540;
+  --tb-border-color: #163a5f;
+  --footnote-target-bg: #1e4a7a;
+  --btn-share-color: #6a9cbf;
+  --btn-share-hover-color: #9ec5e8;
+  --kbd-wrap-color: #4a7aa0;
+  --kbd-text-color: #9ec5e8;
+  --kbd-bg-color: #0d2d4a;
+  --prompt-text-color: rgba(158, 197, 232, 0.85);
+
+  /* tags and categories */
+  --tag-border: #1e4a7a;
+  --tag-shadow: #071c30;
+  --dash-color: #163a5f;
+  --search-tag-bg: #0d2d4a;
+  --categories-border: rgba(30, 74, 122, 0.5);
+  --categories-hover-bg: #163a5f;
+  --categories-icon-hover-color: #ffffff;
+
+  /* archive timeline */
+  --timeline-node-bg: #6a9cbf;
+  --timeline-color: #163a5f;
+  --timeline-year-dot-color: #071c30;
+
+  /* code blocks */
+  --language-border-color: #163a5f;
+  --highlight-bg-color: #071c30;
+  --highlighter-rouge-color: #ffb84d;
+  --highlight-lineno-color: #4a7aa0;
+  --inline-code-bg: rgba(158, 197, 232, 0.08);
+  --code-color: #9ec5e8;
+  --code-header-text-color: #4a7aa0;
+  --code-header-muted-color: #0d2d4a;
+  --code-header-icon-color: #4a7aa0;
+  --clipboard-checked-color: #2bcc2b;
+  --filepath-text-color: #9ec5e8;
+}
+
+@mixin paper {
+  /* background */
+  --main-bg: #f3efe6;
+  --mask-bg: #c8c4bc;
+  --main-border-color: #e0dbd2;
+
+  /* text */
+  --text-color: #1a1a1a;
+  --text-muted-color: #5b5b5b;
+  --text-muted-highlight-color: #3a3a3a;
+  --heading-color: #1a1a1a;
+  --label-color: #3a3a3a;
+  --blockquote-border-color: #d4cfc6;
+  --blockquote-text-color: #5b5b5b;
+
+  /* links and buttons */
+  --link-color: #c43d1f;
+  --link-underline-color: #e8a090;
+  --button-bg: #ede8de;
+  --btn-border-color: #ddd8ce;
+  --btn-backtotop-color: #5b5b5b;
+  --btn-backtotop-border-color: #ddd8ce;
+
+  /* cards */
+  --card-bg: #faf7f2;
+  --card-hover-bg: #e8e3d8;
+  --card-shadow: rgba(90, 80, 60, 0.08) 0 2px 6px 0,
+    rgba(160, 150, 130, 0.2) 0 0 0 1px;
+
+  /* forms and images */
+  --checkbox-color: #b8b3aa;
+  --checkbox-checked-color: #c43d1f;
+  --img-bg: radial-gradient(circle, #f3efe6 0%, #e8e3d8 100%);
+  --shimmer-bg: linear-gradient(
+    90deg,
+    rgba(243, 239, 230, 0) 0%,
+    rgba(220, 215, 205, 1) 50%,
+    rgba(243, 239, 230, 0) 100%
+  );
+
+  /* sidebar */
+  --site-title-color: #5b5b5b;
+  --site-subtitle-color: #5b5b5b;
+  --sidebar-bg: #ede8de;
+  --sidebar-border-color: #ddd8ce;
+  --sidebar-muted-color: #5b5b5b;
+  --sidebar-active-color: #1a1a1a;
+  --sidebar-hover-bg: rgba(196, 61, 31, 0.08);
+  --sidebar-btn-bg: #f3efe6;
+  --sidebar-btn-color: #5b5b5b;
+  --avatar-border-color: #f3efe6;
+
+  /* topbar */
+  --topbar-bg: rgba(243, 239, 230, 0.85);
+  --topbar-text-color: #1a1a1a;
+  --search-border-color: #ddd8ce;
+  --search-icon-color: #b8b3aa;
+  --input-focus-border-color: #b8b3aa;
+
+  /* posts */
+  --post-list-text-color: #3a3a3a;
+  --btn-patinator-text-color: #5b5b5b;
+  --btn-paginator-hover-color: #ede8de;
+  --toc-highlight: #c43d1f;
+  --toc-popup-border-color: #d4cfc6;
+  --btn-share-color: #8a8a8a;
+  --btn-share-hover-color: #c43d1f;
+  --footnote-target-bg: #f0d8d2;
+  --tb-odd-bg: #f8f4ee;
+  --tb-border-color: #e0dbd2;
+  --dash-color: #c8c4bc;
+  --kbd-wrap-color: #b8b3aa;
+  --kbd-text-color: #1a1a1a;
+  --kbd-bg-color: #f3efe6;
+  --prompt-text-color: rgba(26, 26, 26, 0.77);
+  --tag-hover: #e8d5cf;
+
+  /* tags and categories */
+  --tag-border: #d4cfc6;
+  --tag-shadow: #ddd8ce;
+  --search-tag-bg: #f3efe6;
+  --categories-border: rgba(0, 0, 0, 0.1);
+  --categories-hover-bg: #ddd8ce;
+  --categories-icon-hover-color: #1a1a1a;
+
+  /* archive timeline */
+  --timeline-color: rgba(0, 0, 0, 0.07);
+  --timeline-node-bg: #b8b3aa;
+  --timeline-year-dot-color: #f3efe6;
+
+  /* code blocks */
+  --language-border-color: #e0dbd2;
+  --highlight-bg-color: #f0ede6;
+  --highlighter-rouge-color: #7a2010;
+  --highlight-lineno-color: #9e9e9e;
+  --inline-code-bg: rgba(26, 26, 26, 0.05);
+  --code-color: #3a3a3a;
+  --code-header-text-color: #9e9e9e;
+  --code-header-muted-color: #e0dbd2;
+  --code-header-icon-color: #c8c4bc;
+  --clipboard-checked-color: #43c743;
+}
+
+/* Apply blueprint when dark mode is active */
+html[data-mode='dark'] {
+  @include blueprint;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-mode]) {
+    @include blueprint;
+  }
+}
+
+/* Apply paper when light mode is active */
+html[data-mode='light'] {
+  @include paper;
+}
+
+@media (prefers-color-scheme: light) {
+  html:not([data-mode]) {
+    @include paper;
+  }
+}
